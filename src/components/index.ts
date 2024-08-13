@@ -1,5 +1,5 @@
-import Banner from "./Banner/Banner.vue"
 import Contact from "./Contact/Contact.vue"
+import Banner from "./Banner/index.vue"
 import Footer from "./Footer/Footer.vue"
 import Header from "./Header/Header.vue"
 import Welcome from "./Welcome/Welcome.vue"

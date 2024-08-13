@@ -6,7 +6,7 @@
       :id="$attrs.id"
       v-model="$props.modelValue"
     />
-    <label :for="$attrs.id">{{ label }}</label>
+    <label :for="$attrs.id as string">{{ label }}</label>
   </div>
 </template>
 

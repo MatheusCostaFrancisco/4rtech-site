@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col gap-2 font-semibold">
-    <label :for="$attrs.inputId">{{ label }}</label>
+    <label :for="$attrs.id as string">{{ label }}</label>
     <Textarea
       :id="$attrs.inputId"
       v-model="$props.modelValue"
