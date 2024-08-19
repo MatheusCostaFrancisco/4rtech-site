@@ -6,7 +6,7 @@ const __dirname = path.resolve()
 
 export default defineConfig({
   plugins: [vue()],
-  base: "/",
+  base: "/4rtech-site/",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
