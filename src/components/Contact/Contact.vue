@@ -74,7 +74,7 @@ const stateContact = ref({
 
 <style scoped>
 .banner-contact {
-  background-image: url("banner-values.jpg");
+  background-image: url("../../../public/banner-values.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 250px;

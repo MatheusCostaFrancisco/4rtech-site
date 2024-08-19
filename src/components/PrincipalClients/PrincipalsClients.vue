@@ -28,7 +28,7 @@ import { onMounted, ref } from "vue"
 import Carousel from "primevue/carousel"
 
 const imagesPath = import.meta.glob(
-  "../../../public/images/clients/*.{jpg,jpeg,png,gif,webp}"
+  "@/assets/images/clients/*.{jpg,jpeg,png,gif,webp}"
 )
 
 console.log(imagesPath)
@@ -44,9 +44,11 @@ onMounted(() => {
   images.value = Object.entries(imagesPath).map(([path, _]) => {
     return {
       name: path.split("/").pop(),
-      path: `src/${path}`,
+      path: `${path}`,
     }
   })
+
+  console.log(images.value)
 })
 
 const responsiveOptions = ref([

@@ -58,7 +58,7 @@ const valuesCompany = [
 
 <style scoped>
 .banner-values {
-  background-image: url("banner-values.jpg");
+  background-image: url("../../../public/banner-values.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;

@@ -42,7 +42,7 @@
 
 <style lang="scss" scoped>
 .banner {
-  background-image: url("banner-home.jpg");
+  background-image: url("../../../public/banner-home.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
