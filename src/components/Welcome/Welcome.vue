@@ -12,7 +12,7 @@
       </div>
       <div class="wrapper-cards">
         <div class="card">
-          <img src="../../../public/images/card-1.jpg" alt="" />
+          <img src="/images/card-1.jpg" alt="" />
 
           <h2 class="font-semibold text-lg text-center">
             Consultoria e Gestão
@@ -22,7 +22,7 @@
           </div>
         </div>
         <div class="card">
-          <img src="../../../public/images/card-2.jpg" alt="" />
+          <img src="/images/card-2.jpg" alt="" />
 
           <h2 class="font-semibold text-lg text-center">Desenvolvimentos</h2>
           <div>
@@ -31,7 +31,7 @@
           </div>
         </div>
         <div class="card">
-          <img src="../../../public/images/card-3.jpg" alt="" />
+          <img src="/images/card-3.jpg" alt="" />
 
           <h2 class="font-semibold text-lg text-center">Integrações</h2>
           <div>

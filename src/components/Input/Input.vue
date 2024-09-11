@@ -5,6 +5,7 @@
       class="order-1"
       :id="$attrs.id"
       v-model="$props.modelValue"
+      :pt="preset"
     />
     <label :for="$attrs.id as string">{{ label }}</label>
   </div>
@@ -12,6 +13,7 @@
 
 <script setup lang="ts">
 import InputText from "primevue/inputtext"
+import preset from "./preset"
 
 defineProps(["value", "label", "modelValue", "placeholder"])
 defineOptions({

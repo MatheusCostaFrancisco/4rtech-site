@@ -8,12 +8,14 @@
       cols="30"
       :ptOptions="{ mergeOptions: false }"
       maxlength="300"
+      :pt="preset"
     />
   </div>
 </template>
 
 <script setup lang="ts">
 import Textarea from "primevue/textarea"
+import preset from "./preset"
 
 defineProps(["label", "modelValue"])
 defineOptions({

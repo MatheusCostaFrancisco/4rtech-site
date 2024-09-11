@@ -1,18 +1,21 @@
 <template>
-  <section class="flex flex-col h-[50rem]">
+  <div class="flex flex-col h-[50rem]">
     <div class="banner-contact text-center flex flex-col gap-4">
       <h2 class="mt-4 text-4xl font-semibold">Contato</h2>
     </div>
-    <div class="flex gap-4 container self-center">
-      <div class="flex flex-col p-6 gap-4 w-[70%]">
+    <div
+      class="flex text-dark-500 sm:flex-row sm:gap-4 container self-center flex-col"
+    >
+      <div class="flex flex-col p-6 gap-4 sm:w-[70%] sm: mt-10">
         <h2 class="text-2xl">ENVIE UMA MENSAGEM:</h2>
         <Input
           label="Nome:"
           :modelValue="stateContact.name"
           id="name"
+          class="text-slate-900"
           placeholder="Digite seu nome aqui"
         />
-        <div class="flex w-full gap-2">
+        <div class="flex w-full gap-2 flex-wrap">
           <div class="grow">
             <Input
               label="E-mail:"
@@ -34,12 +37,15 @@
           label="Mensagem:"
           placeholder="Digite sua mensagem aqui"
         />
-        <Button class="nav-button bg-green-500 font-semibold text-white">
+        <Button
+          class="nav-button bg-green-500 font-semibold text-white"
+          :onclick="sendEmail"
+        >
           Enviar!
         </Button>
       </div>
 
-      <div class="flex flex-col gap-3 p-6">
+      <div class="flex flex-col gap-3 p-6 sm:mt-10">
         <h2 class="text-2xl">DADOS PARA CONTATO:</h2>
         <div class="flex items-center gap-3">
           <Icon name="envelope" type="fas" size="lg" color="green" />
@@ -55,12 +61,12 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script setup lang="ts">
-import Textarea from "../TextArea.vue"
-import Input from "../Input.vue"
+import Textarea from "../TextArea/TextArea.vue"
+import Input from "../Input/Input.vue"
 import Icon from "../Icon.vue"
 import { ref } from "vue"
 
@@ -70,11 +76,30 @@ const stateContact = ref({
   tel: "",
   message: "",
 })
+
+const sendEmail = async () => {
+  try {
+    const response = await fetch("./sendService.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({
+        name: stateContact.value.name,
+        email: stateContact.value.mail,
+        subject: "Mensagem vinda do site",
+        message: stateContact.value.message,
+      }),
+    })
+    const result = response
+    console.log(result)
+  } catch (error) {
+    console.error("Erro ao enviar email:", error)
+  }
+}
 </script>
 
 <style scoped>
 .banner-contact {
-  background-image: url("../../../public/banner-values.jpg");
+  background-image: url("/banner-values.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 250px;
